@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Font Control</title>
+    <style>
+        #styled-text {
+            padding: 10px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Font Control</h1>
+    <p id="styled-text">This is some sample text.</p>
+
+    <label for="rgb">Enter RGB values (e.g., 255,0,0): </label>
+    <input type="text" id="rgb" placeholder="RGB values">
+    
+    <label for="border-width">Border width (px): </label>
+    <input type="number" id="border-width" placeholder="Border width">
+
+    <button onclick="applyStyles()">Apply Styles</button>
+
+    <script>
+        function applyStyles() {
+            const rgbValue = document.getElementById('rgb').value;
+            const borderWidth = document.getElementById('border-width').value;
+            const paragraph = document.getElementById('styled-text');
+
+            paragraph.style.color = `rgb(${rgbValue})`;
+            paragraph.style.border = `${borderWidth}px solid rgb(${rgbValue})`;
+        }
+    </script>
+</body>
+</html>
+
